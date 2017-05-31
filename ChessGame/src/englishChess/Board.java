@@ -2,6 +2,7 @@ package englishChess;
 
 import java.util.ArrayList;
 
+
 // Creating English Chess Board 8 x 8
 public class Board {
 	// Creating a board made of piece
@@ -9,7 +10,10 @@ public class Board {
 	// Height(y) and width(x) of the board
 	private int xSize = 8, ySize = 8;
 	
-	// 
+	public Board () {
+		board = new Piece[xSize][ySize];
+	}
+	
 	public Board (ArrayList<Piece> p1Pieces, ArrayList<Piece> p2Pieces){
 		board = new Piece[xSize][ySize];
 		for (Piece p : p1Pieces){ // Move all player1's pieces onto board

@@ -3,49 +3,47 @@ package englishChess;
 import java.util.List;
 
 public abstract class Piece {
-	protected int xPos, yPos;
-	protected int pType;
-	protected int pNumber;
+	protected int x, y, type, player;
 	protected boolean isAlive;
 	protected List<Moves> listOfMoves;
 	
 	public Piece(int x, int y, int type, int player) {
-		int xPos = x;
-		int yPos = y;
-		int pType = type;
-		int pNumber = player;
+		this.x = x;
+		this.y = y;
+		this.type = type;
+		this.player = player;
+	} 
+
+	public int getX() {
+		return x;
 	}
 
-	public int getxPos() {
-		return xPos;
+	public void setX(int x) {
+		this.x = x;
 	}
 
-	public int getyPos() {
-		return yPos;
+	public int getY() {
+		return y;
 	}
 
-	public void setyPos(int yPos) {
-		this.yPos = yPos;
+	public void setY(int y) {
+		this.y = y;
 	}
 
-	public void setxPos(int xPos) {
-		this.xPos = xPos;
+	public int getType() {
+		return type;
 	}
 
-	public int getpType() {
-		return pType;
+	public void setType(int type) {
+		this.type = type;
 	}
 
-	public void setpType(int pType) {
-		this.pType = pType;
+	public int getPlayer() {
+		return player;
 	}
 
-	public int getpNumber() {
-		return pNumber;
-	}
-
-	public void setpNumber(int pNumber) {
-		this.pNumber = pNumber;
+	public void setPlayer(int player) {
+		this.player = player;
 	}
 
 	public boolean isAlive() {
@@ -63,8 +61,14 @@ public abstract class Piece {
 	public void setListOfMoves(List<Moves> listOfMoves) {
 		this.listOfMoves = listOfMoves;
 	}
-	
+
 	public void printListOfMoves() {
 		System.out.print("Not yet implemented");
 	}
+
+	public void move(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
 }
